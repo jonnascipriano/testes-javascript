@@ -1,7 +1,20 @@
+var data = new Date()
+var segundos = data.getSeconds()
+var minuto = data.getMinutes()
+var hora = data.getHours()
+var dia = data.getDay()
+var mes = data.getMonth()
+
+if(hora >= 19){
+    dark()
+}
+
 function dark(){
     document.body.style.background = "black"
     document.body.style.color = "white"
     document.getElementById('resimc').style.color = "#d1efd1"
+    document.querySelector('p.resposta').style.background = "red" 
+    // PESQUISAR COMO USAR O QUERYSELECTOR PARA SELECIONAR TODOS OS ELEMENTOS QUE TIVER A CLASSE RESPOSTA
 }
 
 function light(){
@@ -10,8 +23,8 @@ function light(){
     document.getElementById('resimc').style.color = "#003500"
 }
 
-const resimc = document.getElementById('resimc')
 function imc(){
+    const resimc = document.getElementById('resimc')
     const alt = document.getElementById('altura')
     const ps = document.getElementById('peso')
     const altura = Number(alt.value)
@@ -33,5 +46,20 @@ function imc(){
         resimc.innerText += `Você está no nível Obesidade Grave (Obesidade Grau 3)`
     } else {
         resimc.innerText = `Digite um valor válido!`
+    }
+}
+
+function imparpar(){   
+    const n = Number(document.getElementById('imparoupar').value)
+    const resimppar = document.getElementById('res-impar-par')
+    resimppar.style.display = 'block'
+    
+
+    if(n%2 == 0){
+        resimppar.innerText += `${n} é um número par!`
+        console.log('par')
+    } else {
+        resimppar.innerText += `${n} é um número impar!`
+        console.log('impar')
     }
 }
