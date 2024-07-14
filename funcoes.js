@@ -56,15 +56,65 @@ function imparpar(){
 }
 
 function repetidor(){
-    let ni = Number(document.getElementById('ni').value)
-    let salto = Number(document.getElementById('salto').value)
-    let nf = Number(document.getElementById('nf').value)
+    let ni = document.getElementById('ni')
+    let salto = document.getElementById('salto')
+    let nf = document.getElementById('nf')
     let resrep = document.getElementById('resrep')
     resrep.style.display = 'block'
+    resrep.innerHTML = ''
     console.log(ni, salto, nf)
 
-    for(ni; ni <= nf  ; ni += salto){
-        resrep.innerText += ` > ${ni} `
+
+    if(ni.value.length == 0){
+        alert('Verifique o número inicial!')
+    } else if(salto.value.length == 0){
+        alert('Verifique o número de intervalo!')
+    } else if(nf.value.length == 0){
+        alert('Verifique o número final!')
+    } else {
+        resrep.innerText = 'Contando...'
+        let i = Number(ni.value)
+        let s = Number(salto.value)
+        let f = Number(nf.value)
+
+            if(i < f){
+                for(i; i<=f; i+=s){
+                    resrep.innerText += ` > ${i}`
+                }
+            } else if (f < i){
+                for(i; i>=f; i-=s){
+                    resrep.innerText += ` > ${i}`
+                }
+            }
+            resrep.innerText += ` \u{1F3C1}` // Formatação em JavaScript para adicionar emoji unicode = \u{CODE} (Retirar o 'U+')
+        }
     }
 
+
+function numaleatorio(){
+    // Definido o numero minimo
+    let ini = Number(document.getElementById('numialt').value)
+    // Definido o número máximo
+    let fim = Number(document.getElementById('numfalt').value)
+    // Diferença entre os números
+    let dif = fim - ini
+    // Math.random() gera um valor real entre 0 e 1
+    let aleatorio = Math.random()
+    // Math.trunc retorna a parte inteira de um número, descartando suas casas decimais.
+    let num = ini + Math.trunc(dif * aleatorio)
+    let resnumalt = document.getElementById('resnumalt')
+    resnumalt.style.display = 'block'
+    console.log(ini)
+    console.log(fim)
+    console.log(dif)
+    console.log(aleatorio)
+    console.log(num)
+    
+    resnumalt.innerText = `${num}`
+
+    // resnumalt.innerText = Math.floor(Math.random() * (fim - ini))
+
+
+
 }
+
