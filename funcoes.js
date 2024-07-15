@@ -1,5 +1,5 @@
 /* Configuração de hora do site, para que depois de certo horário, o modo dark seja ativado */
-if (hora >= 19 || hora <= 6) {
+if (hora >= 19 || hora <= 4) {
     dark();
   }
 
