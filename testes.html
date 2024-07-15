@@ -101,6 +101,41 @@
             <button onclick="numaleatorio()">Gerar número</button>
             <p id="resnumalt" class="resposta"></p>
         </section>
+
+        <hr>
+
+        <section id="contador-clique">
+            <h1>Contador de cliques</h1><br>
+            <button onclick="cliq()">Clique em mim</button>
+            <button onclick="limp()">Limpar</button>
+            <p id="rescli" class="resposta"></p>
+        </section>
+
+        <hr>
+
+        <section id="media-aluno">
+            <h1>Média do aluno</h1>
+            <form action="">
+                <input type="number" name="def_media" id="def_media" placeholder="Defina a média" max="10" required><br>
+                <input type="text" name="nome_aluno" id="nome_aluno" placeholder="Nome do aluno" required><br>
+                <input type="number" name="n1" id="n1" placeholder="Primeira nota" max="10" required>
+                <input type="number" name="n2" id="n2" placeholder="Segunda nota" max="10" required>
+            </form>
+            <button onclick="analisar_media()">Verificar</button>
+            <p id="resmed" class="resposta"></p>
+        </section>
+
+        <hr>
+
+        <section id="tabuada">
+            <h1>Tabuada (multiplicação)</h1>
+            <form action="">
+                <input type="number" name="numtab" id="numtab" placeholder="Digite um número">
+            </form>
+            <button onclick="calctab()">Calcular</button>
+            <div id="restab" class="resposta"></div>
+        </section>
+
     </main>
 
     <script src="script.js"></script>

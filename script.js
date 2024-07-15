@@ -84,9 +84,20 @@ switch (mes) {
 const h1bv = document.getElementById("bv-dia");
 h1bv.innerHTML = `Bem vindo. Hoje é ${diasem}, ${dia}/${mes}/${ano}`;
 
-/* Configuração de hora do site, para que depois de certo horário, o modo dark seja ativado */
-if (hora >= 19) {
-  dark();
-}
 
-var resposta = document.getElementsByClassName('resposta').innerText = 'teste'
+
+/******************** Não permitir números no input *********************/
+/************************** ESTUDAR MAIS SOBRE **************************/
+const inputName = document.getElementById('nome_aluno')
+
+inputName.addEventListener('keypress', function(e){
+  const keyCode = (e.keyCode ? e.keyCode : e.which);
+  console.log(keyCode)
+
+  // 47+ ao -58 = São números
+  if(keyCode > 47 && keyCode < 58){
+    e.preventDefault()
+  }
+})
+/************************** ESTUDAR MAIS SOBRE **************************/
+/******************** Não permitir números no input *********************/

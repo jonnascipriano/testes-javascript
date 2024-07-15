@@ -1,3 +1,7 @@
+/* Configuração de hora do site, para que depois de certo horário, o modo dark seja ativado */
+if (hora >= 19 || hora <= 6) {
+    dark();
+  }
 
 function dark(){
     document.body.style.background = "black"
@@ -71,6 +75,8 @@ function repetidor(){
         alert('Verifique o número de intervalo!')
     } else if(nf.value.length == 0){
         alert('Verifique o número final!')
+    } else if(ni.value == nf.value){
+        alert('Verifique os valores e tente novamente!')
     } else {
         resrep.innerText = 'Contando...'
         let i = Number(ni.value)
@@ -79,11 +85,11 @@ function repetidor(){
 
             if(i < f){
                 for(i; i<=f; i+=s){
-                    resrep.innerText += ` > ${i}`
+                    resrep.innerText += ` \u{1F449} ${i}`
                 }
             } else if (f < i){
                 for(i; i>=f; i-=s){
-                    resrep.innerText += ` > ${i}`
+                    resrep.innerText += ` \u{1F449} ${i}`
                 }
             }
             resrep.innerText += ` \u{1F3C1}` // Formatação em JavaScript para adicionar emoji unicode = \u{CODE} (Retirar o 'U+')
@@ -118,3 +124,47 @@ function numaleatorio(){
 
 }
 
+let contador = 0
+let rescli = document.getElementById('rescli')
+function cliq(){
+    rescli.style.display = "block"
+
+    contador++
+    rescli.innerHTML = `${contador}`
+}
+
+function limp(){
+    contador = 0
+    rescli.innerHTML = `${contador}`
+}
+
+function analisar_media(){
+    let def_media = Number(document.getElementById('def_media').value)
+    let nome_aluno = document.getElementById('nome_aluno').value
+    let n1 = Number(document.getElementById('n1').value)
+    let n2 = Number(document.getElementById('n2').value)
+    let nota_media = (n1 + n2) / 2
+    let resmed = document.getElementById('resmed')
+    resmed.style.display = "block"
+    resmed.innerText = ''
+    if(nota_media >= def_media){
+        resmed.innerHTML += `A primeira nota foi ${n1.toFixed(2)}, a segunda foi ${n2.toFixed(2)}<br>`
+        resmed.innerHTML += `A média é ${def_media.toFixed(2)}, você alcançou a média de <mark>${nota_media.toFixed(2)}</mark><br>`
+        resmed.innerHTML += `Parabéns, ${nome_aluno}!!`
+    } else if (nota_media < def_media){
+        resmed.innerHTML += `A primeira nota foi ${n1.toFixed(2)}, a segunda foi ${n2.toFixed(2)}<br>`
+        resmed.innerHTML += `A média é ${def_media.toFixed(2)}, você alcançou a média de <mark>${nota_media.toFixed(2)}</mark><br>`
+        resmed.innerHTML += `Você precisa melhorar, ${nome_aluno}`
+    }
+}
+
+function calctab(){
+    let numtab = Number(document.getElementById('numtab').value)
+    let restab = document.getElementById('restab')
+    restab.style.display = 'block'
+    restab.innerHTML = ''
+    for(let i = 1; i<=10; i++){
+        let res = numtab * i
+        restab.innerHTML += `${numtab} x ${i} = ${res}<br>`
+    }
+}
