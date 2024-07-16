@@ -57,7 +57,7 @@ switch (mes) {
     break;
 
   case 6:
-    mes = "07";
+    mes = Number("07");
     break;
 
   case 7:

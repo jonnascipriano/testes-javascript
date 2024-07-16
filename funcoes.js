@@ -168,3 +168,4 @@ function calctab(){
         restab.innerHTML += `${numtab} x ${i} = ${res}<br>`
     }
 }
+
