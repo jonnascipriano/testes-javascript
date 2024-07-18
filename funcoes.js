@@ -180,7 +180,7 @@ let botaoverificar = document.getElementById('butvotverf')
 let selmes = document.getElementById('mesnasc')
 let selano = document.getElementById('anonasc')
 let resvota = document.getElementById('resvota')
-let c = 1900
+let c = 1899
 let i = 0
 
 function vcvotaf(){
@@ -241,9 +241,11 @@ function vcvotav(){
             if(mesidade == 1){
                 resvota.innerHTML = `Você tem ${idade} anos e ${mesidade} mes, já pode votar!`
             } else {
-                resvota.innerHTML = `Você tem ${idade} anos e ${mesidade} meses, já pode votar!`
+                resvota.innerHTML = `Você tem ${idade} anos e ${mes_rest} meses, já pode votar!`
             }
         }    
+
+        
     } else {
         if(mesidade == 0){
             resvota.innerHTML = `Você tem ${idade} anos, não pode votar ainda!`
