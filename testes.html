@@ -142,7 +142,9 @@
                 <select name="anonasc" id="anonasc"></select>
                 <br>
             </div>
-            <div id="resvota"></div>
+            <div>
+                <p id="resvota" class="resposta"></p>
+            </div>
             <button id="butvot" onclick="vcvotaf()">Iniciar</button>
             <button id="butvotverf" onclick="vcvotav()" style="display: none;">Verificar</button>
         </section>
@@ -150,112 +152,7 @@
     </main>
 
     <script>
-        let vcvota = document.getElementById('vc-vota')
-        let vcvotaitens = document.getElementById('vc-vota-itens')
-        let botao = document.getElementById('butvot')
-        let botaoverificar = document.getElementById('butvotverf')
-        let selmes = document.getElementById('mesnasc')
-        let selano = document.getElementById('anonasc')
-        let resvota = document.getElementById('resvota')
-        let c = 1900
-        let i = 0
 
-        function vcvotaf(){
-            vcvotaitens.style.display = 'block'
-            botao.style.display = 'none'
-            botaoverificar.style.display = 'block'
-
-            
-            
-            while(c < ano){
-                let option = document.createElement("option")
-                c++
-                option.text += c
-                option.value = `${c}`
-                selano.add(option)
-            }
-
-            while(i < 12){
-                let option = document.createElement('option')
-                i++
-                option.text = i
-                option.value = `${i}`
-                selmes.add(option)
-                }
-
-            }
-
-            
-        
-
-        
-
-        function vcvotav(){
-            let anovota = Number(selano.value)
-            let mesvota = Number(selmes.value)
-            let idade = ano - anovota
-            let mesidade = mes - mesvota
-            let dif_mes = mesvota - mes
-
-            if(mesvota > mes){
-                if(dif_mes <= 1){
-                    console.log(`Falta ${dif_mes} mês`)
-                } else if (dif_mes > 1){
-                    console.log(`Falta ${dif_mes} meses`)
-                }
-            }
-
-            switch (mesvota) {
-                    case 1:
-                        mesvota = 'Janeiro'
-                        break;
-
-                    case 2:
-                        mesvota = 'Fevereiro'
-                        break;
-
-                    case 3:
-                        mesvota = 'Março'
-                        break;
-
-                    case 4:
-                        mesvota = 'Abril'
-                        break;
-
-                    case 5:
-                        mesvota = 'Maio'
-                        break;
-
-                    case 6:
-                        mesvota = 'Junho'
-                        break;
-
-                    case 7:
-                        mesvota = 'Julho'
-                        break;
-
-                    case 8:
-                        mesvota = 'Agosto'
-                        break;
-
-                    case 9:
-                        mesvota = 'Setembro'
-                        break;
-
-                    case 10:
-                        mesvota = 'Outubro'
-                        break;
-
-                    case 11:
-                        mesvota = 'Novembro'
-                        break;
-
-                    case 12:
-                        mesvota = 'Dezembro'
-                        break;
-                    }
-            
-        }
 
 
     </script>

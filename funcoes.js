@@ -169,3 +169,147 @@ function calctab(){
     }
 }
 
+
+// SECTION 'VOCE VOTA?'**************************************************************
+
+
+let vcvota = document.getElementById('vc-vota')
+let vcvotaitens = document.getElementById('vc-vota-itens')
+let botao = document.getElementById('butvot')
+let botaoverificar = document.getElementById('butvotverf')
+let selmes = document.getElementById('mesnasc')
+let selano = document.getElementById('anonasc')
+let resvota = document.getElementById('resvota')
+let c = 1900
+let i = 0
+
+function vcvotaf(){
+    vcvotaitens.style.display = 'block'
+    botao.style.display = 'none'
+    botaoverificar.style.display = 'block'
+
+    
+    
+    while(c < ano){
+        let option = document.createElement("option")
+        c++
+        option.text += c
+        option.value = `${c}`
+        selano.add(option)
+    }
+
+    while(i < 12){
+        let option = document.createElement('option')
+        i++
+        option.text = i
+        option.value = `${i}`
+        selmes.add(option)
+        }
+
+    }
+
+function vcvotav(){
+    let anovota = Number(selano.value)
+    let mesvota = Number(selmes.value)
+    let idade = ano - anovota
+    let mesidade = mes - mesvota
+    let dif_mes = mesvota - mes
+    let mes_rest = 12 - dif_mes
+    resvota.style.display = 'block'
+    
+
+    if(mesvota > mes){
+        console.log(`Você tem ${idade - 1} anos e ${mes_rest} meses`)
+        idade = idade-1
+    } else if (mesvota == mes){
+        console.log(`Você tem exatamente ${idade} anos`)
+
+    } else if (mesvota < mes) {
+
+        if(dif_mes == -1){
+            console.log(`Você tem ${idade} anos e ${mesidade} mes`)
+
+        } else {
+            console.log(`Você tem ${idade} anos e ${mesidade} meses`)
+        }
+    }
+
+    if(idade >= 18){
+        if(mesidade == 0){
+            resvota.innerHTML = `Você tem ${idade} anos, já pode votar!`
+        } else {
+            if(mesidade == 1){
+                resvota.innerHTML = `Você tem ${idade} anos e ${mesidade} mes, já pode votar!`
+            } else {
+                resvota.innerHTML = `Você tem ${idade} anos e ${mesidade} meses, já pode votar!`
+            }
+        }    
+    } else {
+        if(mesidade == 0){
+            resvota.innerHTML = `Você tem ${idade} anos, não pode votar ainda!`
+        } else {
+            if(dif_mes < 0){
+                if(mesidade == 1){
+                    resvota.innerHTML = `Você tem ${idade} anos e ${mesidade} mes, não pode votar ainda!`
+                } else {
+                    resvota.innerHTML = `Você tem ${idade} anos e ${mesidade} meses, não pode votar ainda!`
+                }
+            } else {
+                resvota.innerHTML = `Você tem ${idade} anos e ${mes_rest} meses, não pode votar ainda!`
+            }
+        }
+    }
+
+    // switch (mesvota) {
+    //         case 1:
+    //             mesvota = 'Janeiro'
+    //             break;
+
+    //         case 2:
+    //             mesvota = 'Fevereiro'
+    //             break;
+
+    //         case 3:
+    //             mesvota = 'Março'
+    //             break;
+
+    //         case 4:
+    //             mesvota = 'Abril'
+    //             break;
+
+    //         case 5:
+    //             mesvota = 'Maio'
+    //             break;
+
+    //         case 6:
+    //             mesvota = 'Junho'
+    //             break;
+
+    //         case 7:
+    //             mesvota = 'Julho'
+    //             break;
+
+    //         case 8:
+    //             mesvota = 'Agosto'
+    //             break;
+
+    //         case 9:
+    //             mesvota = 'Setembro'
+    //             break;
+
+    //         case 10:
+    //             mesvota = 'Outubro'
+    //             break;
+
+    //         case 11:
+    //             mesvota = 'Novembro'
+    //             break;
+
+    //         case 12:
+    //             mesvota = 'Dezembro'
+    //             break;
+    //         }
+    
+}
+
+// SECTION 'VOCE VOTA?'**************************************************************
