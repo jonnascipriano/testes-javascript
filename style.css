@@ -95,6 +95,32 @@ section#imc p{
     padding: 5px;
 }
 
-#impar-par{
+#carrosel{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    overflow: hidden;
 
+    & .carrosel-container{
+        display: flex;
+        
+
+        .carrosel-itens{
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 80%;
+            border: 1px solid red;
+
+            & img{
+                width: 800px;
+            }
+        }
+
+        & .active{
+            display: block;
+        }
+    }
 }
