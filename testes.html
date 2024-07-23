@@ -151,24 +151,42 @@
 
         <hr>
 
-        <section id="carrosel">
-            <div class="carrosel-container">
-                <div class="carrosel-itens active">
-                    <h2>Ferrari</h2>
-                    <img src="assets/imgs/ferrari.png" alt="">
+        <section id="slider">
+            
+            <div class="slides">
+                <!-- Radio buttons -->
+                <input type="radio" name="radio-btn" id="radio1">
+                <input type="radio" name="radio-btn" id="radio2">
+                <input type="radio" name="radio-btn" id="radio3">
+                <!-- Fim Radio buttons -->
+
+
+                <!-- Slide Images -->
+                <div class="slide firts">
+                    <img src="assets/imgs/img1.jpg" alt="img1">
                 </div>
-                <div class="carrosel-itens">
-                    <h2>Lamborghini</h2>
-                    <img src="assets/imgs/lamborghini.webp" alt="">
+
+                <div class="slide">
+                    <img src="assets/imgs/img2.jpg" alt="img2">
                 </div>
-                <div class="carrosel-itens">
-                    <h2>Koenigsegg</h2>
-                    <img src="assets/imgs/koenigsegg.png" alt="">
+
+                <div class="slide">
+                    <img src="assets/imgs/img3.jpg" alt="img3">
+                </div>
+                <!-- Fim Slide Images -->
+
+                <!-- Navigation Auto -->
+                <div class="navigation-auto">
+                    <div class="auto-btn1"></div>
+                    <div class="auto-btn2"></div>
+                    <div class="auto-btn3"></div>
                 </div>
             </div>
-            <div class="setas">
-                <button><</button>
-                <button>></button>
+
+            <div class="manual-navigation">
+                <label for="radio1" class="manual-btn"></label>
+                <label for="radio2" class="manual-btn"></label>
+                <label for="radio3" class="manual-btn"></label>
             </div>
         </section>
 
