@@ -318,3 +318,18 @@ function vcvotav(){
 
 // SECTION 'VOCE VOTA?'**************************************************************
 
+// SECTION 'MATRIZES' **************************************************************
+
+
+let matriz = []
+function adicionarMatriz(){
+    let adItem = document.getElementById('admat').value
+    let itemMatriz = matriz.push(adItem)
+    let resmatr = document.getElementById('resmatr')
+    resmatr.innerHTML = `Matriz: ${matriz}`
+    console.log(matriz, itemMatriz, adItem)
+    resmatr.innerHTML += `<br><p>Matriz em ordem alfabética: ${matriz.sort()}</p>`
+}
+
+// FIM SECTION 'MATRIZES' **************************************************************
+
