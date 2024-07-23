@@ -94,3 +94,14 @@ section#imc p{
     margin: 10px 0;
     padding: 5px;
 }
+
+#lampada{
+    font-size: 100px;
+}
+
+.ligardesligar{
+    /* filter: brightness(80%); */
+    filter: drop-shadow(0 0 10px yellow);
+    color: yellow;
+
+}

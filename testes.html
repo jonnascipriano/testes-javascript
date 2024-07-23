@@ -14,6 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playwrite+CO:wght@100..400&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playwrite+CO:wght@100..400&display=swap"
         rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
 <body>
@@ -132,6 +133,7 @@
 
         <section id="vc-vota">
             <h1>Você vota?</h1><br>
+            <h6>Em testes</h6>
             <div id="vc-vota-itens" style="display: none;">
                 <label for="mesnasc">Mês de nascimento:</label>
                 <select name="mesnasc" id="mesnasc">
@@ -153,12 +155,23 @@
 
         <section id="matrizes">
             <h1>Matrizes</h1>
+            <h6>Em testes</h6>
             <div class="mat-tes">
                 <label for="admat"></label>
                 <input type="text" name="admat" id="admat" placeholder="Adicione algo na matriz"><br>
                 <button onclick="adicionarMatriz()">Adicionar a matriz</button>
             </div>
                 <p id="resmatr">Matriz:</p>
+        </section>
+
+        <hr>
+
+        <section class="lampada">
+            <h1>Lampada</h1>
+            <div>
+                <span class="material-symbols-outlined" id="lampada">lightbulb</span><br>
+                <button class="ligLam" onclick="ligardesligar()">Ativar/Desativar</button>
+            </div>
         </section>
 
     </main>

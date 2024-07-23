@@ -328,8 +328,16 @@ function adicionarMatriz(){
     let resmatr = document.getElementById('resmatr')
     resmatr.innerHTML = `Matriz: ${matriz}`
     console.log(matriz, itemMatriz, adItem)
-    resmatr.innerHTML += `<br><p>Matriz em ordem alfabética: ${matriz.sort()}</p>`
+    resmatr.innerHTML += `<br>Matriz em ordem alfabética: ${matriz.sort()}`
+    resmatr.innerHTML += `<br>Quantidade de itens: ${matriz.length}`
+    resmatr.innerHTML += `<br>Primeiro item: ${matriz[0]}`
+    resmatr.innerHTML += `<br>Último item: ${matriz[matriz.length - 1]}`
 }
 
 // FIM SECTION 'MATRIZES' **************************************************************
+let lampada = document.getElementById('lampada')
+
+function ligardesligar(){
+    lampada.classList.toggle('ligardesligar')
+}
 
