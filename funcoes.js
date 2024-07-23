@@ -237,13 +237,15 @@ function vcvotav(){
     if(idade >= 18){
         if(mesidade == 0){
             resvota.innerHTML = `Você tem ${idade} anos, já pode votar!`
+        } else if (mesvota < mes){
+            resvota.innerHTML = `Você tem ${idade} anos e ${dif_mes * -1} meses, já pode votar!`
         } else {
             if(mesidade == 1){
                 resvota.innerHTML = `Você tem ${idade} anos e ${mesidade} mes, já pode votar!`
             } else {
                 resvota.innerHTML = `Você tem ${idade} anos e ${mes_rest} meses, já pode votar!`
             }
-        }    
+        }   
 
         
     } else {
@@ -316,20 +318,3 @@ function vcvotav(){
 
 // SECTION 'VOCE VOTA?'**************************************************************
 
-
-
-let count = 1;
-document.getElementById('radio1').checked = true;
-
-setInterval(function(){
-    nextImage()
-}, 2000);
-
-function nextImage(){
-    count++;
-    if(count>4){
-        count = 1
-    }
-document.getElementById('radio'+count).checked = true;
-
-}
