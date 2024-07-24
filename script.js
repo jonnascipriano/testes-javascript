@@ -6,6 +6,8 @@ var diasem = data.getDay();
 var dia = data.getDate();
 var mes = data.getMonth();
 var ano = data.getFullYear();
+var Data = [hora, minuto, segundos].join(':')
+
 
 switch (diasem) {
   case 0:

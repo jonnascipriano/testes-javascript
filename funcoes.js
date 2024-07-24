@@ -335,9 +335,32 @@ function adicionarMatriz(){
 }
 
 // FIM SECTION 'MATRIZES' **************************************************************
+
+// SECTION 'lampada' **************************************************************
+
 let lampada = document.getElementById('lampada')
 
 function ligardesligar(){
     lampada.classList.toggle('ligardesligar')
+}
+
+// FIM SECTION 'LAMPADA' **************************************************************
+
+// TESTE **************************************************************
+
+let testecontador = document.getElementById('timeout')
+let seg = 0
+let min = 0
+let hor = 0
+
+
+function time(){
+    today = new Date();
+    h = today.getHours();
+    m = today.getMinutes();
+    s = today.getSeconds();
+    testecontador.innerHTML = `Hora certa: ${h}h ${m}m ${s}s`;
+    testecontador.innerHTML += `<br>${data.toLocaleDateString('pt-BR')}`
+    setTimeout('time()',500)
 }
 
