@@ -364,3 +364,21 @@ function time(){
     setTimeout('time()',1000)
 }
 
+
+
+function calcularAreaTerreno(){
+    let larg = Number(document.getElementById('larg').value)
+    let comp = Number(document.getElementById('comp').value)
+    let area = larg * comp
+    let resare = document.getElementById('resare')
+    resare.style.display = 'block'
+    resare.innerHTML = `A área do terreno tem ${area} metros quadrados`
+}
+
+
+function soma(a, b){
+    a = Number(document.getElementById('n1').value)
+    b = Number(document.getElementById('n2').value)
+    console.log(a + b)
+}
+
