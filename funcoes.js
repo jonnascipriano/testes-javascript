@@ -361,6 +361,6 @@ function time(){
     s = today.getSeconds();
     testecontador.innerHTML = `Hora certa: ${h}h ${m}m ${s}s`;
     testecontador.innerHTML += `<br>${data.toLocaleDateString('pt-BR')}`
-    setTimeout('time()',500)
+    setTimeout('time()',1000)
 }
 
