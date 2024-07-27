@@ -375,6 +375,8 @@ function calcularAreaTerreno(){
     resare.innerHTML = `A área do terreno tem ${area} metros quadrados`
 }
 
+/************************************************************************* */
+
 
 function soma(a, b){
     a = Number(document.getElementById('n1').value)
@@ -382,3 +384,35 @@ function soma(a, b){
     console.log(a + b)
 }
 
+
+/************************************************************************* */
+var botaoAdv = document.querySelector('#but_adv');
+var numNone = document.getElementById('num_none');
+var resnum = document.getElementById('resnum');
+
+botaoAdv.onclick = () => numNone.style.display = 'block'
+
+
+var x = 0
+console.log(x)
+function adivinhe(){
+    botaoAdv.style.display = 'none'
+    x = 100 * Math.random().toFixed(2)
+    console.log(x)
+    resnum.style.block = 'block'
+    
+}
+
+function verificarNum(){
+    var verifnum = Number(document.querySelector('#num_none #vernum').value)
+    resnum.style.display = 'block'
+    console.log(verifnum)
+
+    if(verifnum > x){
+        resnum.innerHTML = `Você escolheu <b>${verifnum}</b>, mas o número certo está abaixo!`
+    } else if (verifnum < x){
+        resnum.innerHTML = `Você escolheu <b>${verifnum}</b>, mas o número certo está acima!`
+    } else {
+        resnum.innerHTML = `<b>Parabéns! Você acertou!</b>`
+    }
+}

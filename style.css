@@ -111,3 +111,7 @@ section#imc p{
     color: rgba(yellow, yellow, yellow, 1);
     text-shadow: 0 0 20px yellow;
 }
+
+#num_none{
+    display: none;
+}
