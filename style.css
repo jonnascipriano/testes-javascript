@@ -45,6 +45,87 @@ header{
 
 }
 
+#menu{
+    display: none;
+}
+
+@media screen and (max-width: 555px) {
+    #menu{
+        display: flex;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    #span-menu{
+        border-top: 2px solid;
+        width: 20px;
+        transition: .1s;
+    }
+
+    #btn-mobile.active #span-menu{
+        border-top: transparent;
+    }
+
+    #span-menu::after, #span-menu::before{
+        content: '';
+        display: block;
+        width: 20px;
+        height: 2px;
+        background: currentColor;
+        margin-top: 5px;
+        position: relative;
+        transition: .3s;
+    }
+
+    #btn-mobile.active #span-menu::after{
+        transform: rotate(135deg);
+        top: -7px;
+    }
+
+    #btn-mobile.active #span-menu::before{
+        transform: rotate(-135deg);
+    }
+
+
+
+    header nav{
+        display: none;
+        transition: 1s;
+    }
+
+    #themes{
+        display: none;
+    }
+
+    #links{
+        visibility: hidden;
+        overflow-y: hidden;
+        transition: 1s;
+    }
+
+    .link-container{
+        width: 100vw;
+        position: absolute;
+        top: 70px;
+        display: block;
+        background: white;
+        transition: 1s;
+        overflow: auto;
+    }
+
+    .link-container ul#links{
+        visibility: visible;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        transition: 1s;
+    }
+
+}
+
 main{
     width: 100%;
     margin: auto;

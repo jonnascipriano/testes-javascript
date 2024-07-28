@@ -1,7 +1,34 @@
 /* Configuração de hora do site, para que depois de certo horário, o modo dark seja ativado */
 if (hora >= 19 || hora <= 4) {
     dark();
-  }
+}
+
+
+
+/******************************************************************* */
+
+
+let btnMobile = document.getElementById('btn-mobile')
+let navBar = document.getElementById('nav')
+function menuHamburguer(){
+    btnMobile.classList.toggle('active')
+
+    if(btnMobile.classList.contains('active')){
+        navBar.classList.add('link-container')
+    } else {
+        navBar.classList.remove('link-container')
+    }
+}
+
+
+
+
+
+
+
+
+/****************************************************************** */
+
 
 function dark(){
     document.body.style.background = "black"
