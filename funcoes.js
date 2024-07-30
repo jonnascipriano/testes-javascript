@@ -443,3 +443,7 @@ function verificarNum(){
         resnum.innerHTML = `<b>Parabéns! Você acertou!</b>`
     }
 }
+
+let diaHoje = document.querySelector('#datas p')
+
+diaHoje.innerHTML += data
